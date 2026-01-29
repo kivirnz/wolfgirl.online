@@ -19,7 +19,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install pyyaml
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          pip install pyyaml
 
       - name: Run build.sh
         run: bash ./build.sh
