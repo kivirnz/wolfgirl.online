@@ -651,3 +651,11 @@ em { font-style: italic; }
   text-align: center;
   margin: 0.5rem 0;
 }
+
+@media (max-width: 600px) {
+  .buttons {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
