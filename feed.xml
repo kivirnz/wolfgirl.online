@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>Riley's Blog (wolfgirl.online)</title>
+<link>https://wolfgirl.online</link>
+<description>Blog posts</description>
+
+    <item>
+      <title><![CDATA[Librebooting, ThinkPads And Intel ME Hell]]></title>
+      <link>https://wolfgirl.online/blog/libreboot/</link>
+      <guid>https://wolfgirl.online/blog/libreboot/</guid>
+      <pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[]]></description>
+    </item>
+    
+    <item>
+      <title><![CDATA[My Weird Journey Investigating PyInstaller Malware In Bulk]]></title>
+      <link>https://wolfgirl.online/blog/pyinstaller/</link>
+      <guid>https://wolfgirl.online/blog/pyinstaller/</guid>
+      <pubDate>Mon, 02 Dec 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[]]></description>
+    </item>
+    
+    <item>
+      <title><![CDATA[Fuzzing ~98,000 Random Spring Boot Servers For AWS S3 Keys]]></title>
+      <link>https://wolfgirl.online/blog/springfuzz/</link>
+      <guid>https://wolfgirl.online/blog/springfuzz/</guid>
+      <pubDate>Thu, 06 Jun 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[]]></description>
+    </item>
+    
+    <item>
+      <title><![CDATA[Decrappifying A Cheap Android TV Box]]></title>
+      <link>https://wolfgirl.online/blog/tvspyware/</link>
+      <guid>https://wolfgirl.online/blog/tvspyware/</guid>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[]]></description>
+    </item>
+    
+</channel>
+</rss>

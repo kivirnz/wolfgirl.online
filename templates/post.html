@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Auto-generated from blog-md/$slug$.md by build.sh -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$title$ - Wolfgirl Онлайн! ΘΔ</title>
+  <link rel="canonical" href="https://wolfgirl.online/blog/$slug$.html">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../vendor/atom-one-light.min.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="../../vendor/atom-one-dark.min.css" media="(prefers-color-scheme: dark)">
+  <script src="../../vendor/highlight.min.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => hljs.highlightAll());</script>
+</head>
+
+<body>
+  <article>
+    <header>
+      <div class="article-header-row">
+        <a href="/" class="back">← Back</a>
+        <a href="/" class="home-icon" aria-label="Home">
+          <picture>
+            <source srcset="../../images/wolf-white.svg" media="(prefers-color-scheme: dark)">
+            <img src="../../images/wolf-white.svg" alt="">
+          </picture>
+        </a>
+      </div>
+      <h1>$title$</h1>
+      <div class="meta-row">
+        <time datetime="$date_iso$">$date$$if(reading_time)$ · $reading_time$$endif$</time>
+      </div>
+    </header>
+
+    $body$
+
+    <div class="buttons" id="buttons">
+      <img src="../../images/buttons/transbian.png" />
+      <img src="../../images/buttons/acab.gif" />
+      <img src="../../images/buttons/therian.png" />
+      <img src="../../images/buttons/twopaws.png" />
+      <img src="../../images/buttons/soulseek.gif" />
+    </div>
+    <script>
+      const footnotes = document.querySelector('.footnotes');
+      const callout = document.getElementById('buttons');
+      if (footnotes && callout) footnotes.before(callout);
+    </script>
+  </article>
+</body>
+
+</html>
