@@ -21,8 +21,8 @@
   <article>
     <header>
       <div class="article-header-row">
-        <a href="/" class="back">← Back</a>
-        <a href="/" class="home-icon" aria-label="Home">
+        <a target="_blank" href="/" class="back">← Back</a>
+        <a target="_blank" href="/" class="home-icon" aria-label="Home">
           <img src="../../images/wolf-white.svg" alt="">
         </a>
       </div>
@@ -80,28 +80,28 @@
         alt="All of the IPs it downloaded." /></p>
     <p>Our next step is to find a way to fuzz all of these IP addresses
       for possible exposed endpoints. My first immediate thought went to a
-      tool called <a href="https://github.com/ffuf/ffuf">FFuF</a> which
+      tool called <a target="_blank" href="https://github.com/ffuf/ffuf">FFuF</a> which
       was built specifically for this purpose. However the issue was that
-      <a href="https://github.com/ffuf/ffuf">FFuF</a> does not support
+      <a target="_blank" href="https://github.com/ffuf/ffuf">FFuF</a> does not support
       bulk testing of IPs, it can only handle them one at a time. And
       sadly, I do not have the time required to input each IP hand by
       hand. So I did a little bit of digging and I found my solution, it’s
-      a tool written by <a href="https://github.com/NetSPI">NetSPI</a>
-      called <a href="https://github.com/NetSPI/AutoDirbuster">AutoDirbuster</a>.
-      AutoDirbuster is a Python script that uses <a href="https://github.com/ffuf/ffuf">FFuF</a> to fuzz multiple
+      a tool written by <a target="_blank" href="https://github.com/NetSPI">NetSPI</a>
+      called <a target="_blank" href="https://github.com/NetSPI/AutoDirbuster">AutoDirbuster</a>.
+      AutoDirbuster is a Python script that uses <a target="_blank" href="https://github.com/ffuf/ffuf">FFuF</a> to fuzz multiple
       IPs/URLs one after another in bulk, exactly what I needed. I needed
       a wordlist of paths relating to Spring Boot to test the IPs against
       though, so for this I used <a
         href="https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/spring-boot.txt">spring-boot.txt</a>,
-      helpfully put together by <a href="https://github.com/danielmiessler">Daniel Miessler</a>, the
-      creator of <a href="https://github.com/danielmiessler/SecLists">SecLists</a>. So
+      helpfully put together by <a target="_blank" href="https://github.com/danielmiessler">Daniel Miessler</a>, the
+      creator of <a target="_blank" href="https://github.com/danielmiessler/SecLists">SecLists</a>. So
       next I transferred both my IP list and the wordlist to an Amazon EC2
-      instance I rented, installed <a href="https://github.com/ffuf/ffuf">FFuF</a> and <a
+      instance I rented, installed <a target="_blank" href="https://github.com/ffuf/ffuf">FFuF</a> and <a
         href="https://github.com/NetSPI/AutoDirbuster">AutoDirbuster</a> and
       ran the script using:
     </p>
     <pre><code>python3 AutoDirbuster.py springboot.txt -w spring-boot.txt</code></pre>
-    <p>(I also ran this script in <a href="https://www.gnu.org/software/screen/">GNU screen</a>, this was
+    <p>(I also ran this script in <a target="_blank" href="https://www.gnu.org/software/screen/">GNU screen</a>, this was
       because I wanted to check on the scripts progress on my VPS
       throughout the time it was running without disturbing anything
       else)</p>
@@ -158,18 +158,18 @@
         alt="Regex magic! (∩^ω^)⊃━☆ﾟ.*" /></p>
     <p>The next step was to resolve all of these IPs to hostnames to see
       which ones rely on AWS as a backend. Looking back now, I could have
-      used the -dns flag in <a href="https://github.com/NetSPI/AutoDirbuster">AutoDirbuster</a> but
+      used the -dns flag in <a target="_blank" href="https://github.com/NetSPI/AutoDirbuster">AutoDirbuster</a> but
       I didn’t see it at the time, and when I finally realised I could do
       that I was already a day through running the script and I didn’t
       want to restart it.</p>
     <p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*_3k0Q9ihkhQ6yHEHTe8WtA.png"
         alt="Hehe, whoopsie!" /></p>
-    <p>So instead, I opted to use <a href="https://internetdb.shodan.io/">Shodan’s InternetDB API</a>. <a
+    <p>So instead, I opted to use <a target="_blank" href="https://internetdb.shodan.io/">Shodan’s InternetDB API</a>. <a
         href="https://internetdb.shodan.io/">InternetDB</a> is essentially
       an IP search engine that tells you information such as the IP’s open
       ports, their hostnames, their server backend and much much more. So
       I wrote a simple Bash script to query all of the IP’s in
-      heapdump_ips.txt against the <a href="https://internetdb.shodan.io/">InternetDB API</a>:</p>
+      heapdump_ips.txt against the <a target="_blank" href="https://internetdb.shodan.io/">InternetDB API</a>:</p>
     <pre><code>#!/bin/bash
 while IFS= read -r ip; do
  echo “ — — — — — “
@@ -198,7 +198,7 @@ done &lt; heapdump_ips.txt</code></pre>
       for all of the IPs. I was right in that some of them had all of the
       3 available endpoints open, but for those that did, I just manually
       picked 1 of them at random and deleted the other 2. What surprised
-      me even more is that since I ran the <a href="https://github.com/NetSPI/AutoDirbuster">AutoDirbuster</a>
+      me even more is that since I ran the <a target="_blank" href="https://github.com/NetSPI/AutoDirbuster">AutoDirbuster</a>
       scan, a lot of the Amazon IPs that had an exposed heapdump endpoint
       went down, so I was only left with 126 out of the original 556
       available. It could be that some were just fixed to not make those
@@ -252,7 +252,7 @@ print(&quot;All done you absolute mong!&quot;)</code></pre>
         alt="Awesome! :3" /></p>
     <h1 id="analyzing-the-heapdumps">Analyzing the heapdumps</h1>
     <p>Now the next step is to finally analyze these heapdumps. For
-      this, I am going to use a tool called <a href="https://visualvm.github.io/">VisualVM</a>. <a
+      this, I am going to use a tool called <a target="_blank" href="https://visualvm.github.io/">VisualVM</a>. <a
         href="https://visualvm.github.io/">VisualVM</a> is a JVM analysis
       tool built by Oracle, and it can be used for the exact purpose of
       analyzing heapdumps. All we have to do is to load up the .hprof
@@ -310,7 +310,7 @@ print(&quot;All done you absolute mong!&quot;)</code></pre>
       them after an = like I originally thought, it would literally just
       return ‘SECRET_ACCESS_KEY_ID’, not ‘SECRET_ACCESS_KEY_ID =
       Js6IDrwAIkvSY+8fSJ5bcep05ENlNvXgc+JRRr7Y’. So I thought the next
-      best step would be a regex. I looked online and <a href="https://regexr.com/5sbkb">found the regex for a secret
+      best step would be a regex. I looked online and <a target="_blank" href="https://regexr.com/5sbkb">found the regex for a secret
         access
         key ID</a> to be: ([a-zA-Z0–9+/]{40}). Translated into English, this
       means any 40 character string that has a-z (lowercase), A-Z

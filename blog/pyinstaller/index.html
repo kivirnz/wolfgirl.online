@@ -21,8 +21,8 @@
   <article>
     <header>
       <div class="article-header-row">
-        <a href="/" class="back">← Back</a>
-        <a href="/" class="home-icon" aria-label="Home">
+        <a target="_blank" href="/" class="back">← Back</a>
+        <a target="_blank" href="/" class="home-icon" aria-label="Home">
           <img src="../../images/wolf-white.svg" alt="">
         </a>
       </div>
@@ -69,7 +69,7 @@
       instantly without having to worry about installing Python or Python
       dependencies beforehand. So the first step to this is to extract the
       .exe into the raw compiled .pyc files. Thankfully, there is a
-      helpful tool to do this called <a href="https://github.com/extremecoders-re/pyinstxtractor">pyinstxtractor</a>
+      helpful tool to do this called <a target="_blank" href="https://github.com/extremecoders-re/pyinstxtractor">pyinstxtractor</a>
       which serves this exact purpose. So by running:</p>
     <pre><code>pyinstxtractor NETFLIXER-v3.1.exe</code></pre>
     <p>We can then get the whole source code of this program!</p>
@@ -93,7 +93,7 @@
       Theoretically I could spin up a Docker container with Python 3.12
       and decompile it that way but that is far too much hassle, so
       instead I opted for a different method.</p>
-    <p>After a bit of Googling, I found <a href="https://pylingual.io/">PyLingual</a>. A new webapp made by <a
+    <p>After a bit of Googling, I found <a target="_blank" href="https://pylingual.io/">PyLingual</a>. A new webapp made by <a
         href="https://www.computer.org/csdl/proceedings-article/sp/2025/223600a052/21B7QZB86cg">Josh
         Wiedemeier, Tarbet Elliot, Zheng Max, Ko Sangsoo, Ouyang Jessica,
         Cha Sang Kil and Kangkook Jee</a>, a group of researchers at the
@@ -133,9 +133,9 @@
       because with this bot token, it allows you to dump the entire
       history of the Telegram bot, so we can see exactly what type of
       people fall for this malware.</p>
-    <p>Thankfully, <a href="https://github.com/soxoj">soxoj</a> (the
-      same mastermind behind the amazing <a href="https://github.com/soxoj/maigret">Maigret</a> OSINT tool) made
-      a <a href="https://github.com/soxoj/telegram-bot-dumper">script</a>
+    <p>Thankfully, <a target="_blank" href="https://github.com/soxoj">soxoj</a> (the
+      same mastermind behind the amazing <a target="_blank" href="https://github.com/soxoj/maigret">Maigret</a> OSINT tool) made
+      a <a target="_blank" href="https://github.com/soxoj/telegram-bot-dumper">script</a>
       to do exactly that, to dump a Telegram bot’s full history based on
       the bot token. But when I first tried to make a direct API call to
       Telegram to get basic information about the bot, I encountered an
@@ -164,7 +164,7 @@
     <h1 id="investigating-praserexe"><strong>Investigating
         Praser.exe</strong></h1>
     <p>Firstly, before I get into this one, I do have to give a quick
-      shout out to <a href="https://natangrygiel.pl/en/">0xVulp</a>. A
+      shout out to <a target="_blank" href="https://natangrygiel.pl/en/">0xVulp</a>. A
       long time friend of mine who decided to embark on this silly journey
       with me after sharing my discoveries with the NETFLIXER malware.
       Truly awesome guy and he helped me out tons with this, shout out to
@@ -190,7 +190,7 @@
       But thankfully, there is another endpoint which will show you the
       content of a public channel too, it’s under
       ‘t.me**/s/**channel_name_here’. Here I will use a random public meme
-      channel I’m in (<a href="https://t.me/x21edge">@x21edge</a>) as an
+      channel I’m in (<a target="_blank" href="https://t.me/x21edge">@x21edge</a>) as an
       example:
     </p>
     <p>![<a
@@ -208,17 +208,17 @@
       desired results far better than any dork could. Thankfully, there
       are a few different Telegram CSEs available, such as the ones <a
         href="https://cse.google.com/cse?cx=006368593537057042503%3Aig4r3rz35qi#gsc.tab=0">here</a>,
-      <a href="https://cse.google.com/cse?cx=6c3e0c0d3da8e3b4a">here</a>,
+      <a target="_blank" href="https://cse.google.com/cse?cx=6c3e0c0d3da8e3b4a">here</a>,
       <a
         href="https://cse.google.com/cse?q=+&amp;cx=006368593537057042503%3Aefxu7xprihg#gsc.tab=0&amp;gsc.q=%20&amp;gsc.page=1">here</a>
-      and <a href="https://cse.google.com/cse?cx=004805129374225513871%3Ap8lhfo0g3hg">here</a>.
+      and <a target="_blank" href="https://cse.google.com/cse?cx=004805129374225513871%3Ap8lhfo0g3hg">here</a>.
       From these, we can search for stuff such as ‘steam logs checker’ and
       get a bunch of these Telegram channels hosting similar malware:
     </p>
     <p><img src="https://miro.medium.com/v2/resize:fit:1328/format:webp/1*7R_NSxf7yLJze-ycSi1crQ.png"
         alt="captionless image" /></p>
     <p>Upon further digging in these CSEs, I found a Telegram channel
-      under the name of <a href="https://t.me/HackerAviatorPro">@HackerAviatorPro</a> which is
+      under the name of <a target="_blank" href="https://t.me/HackerAviatorPro">@HackerAviatorPro</a> which is
       absolutely rife with these kinds of malware.</p>
     <p><img src="https://miro.medium.com/v2/resize:fit:500/format:webp/1*WukBfqGtjXdXz9As3MIKZw.png"
         alt="From my DMs with 0xVulp" /></p>
@@ -277,7 +277,7 @@ echo “All done”</code></pre>
       different infostealer log formats into one to make them more
       readable by checkers. The same as with I explained earlier about
       checkers being easily replaced by tools like SilverBullet though,
-      parsers can be easily replaced by tools like <a href="https://github.com/BurntSushi/ripgrep">ripgrep</a> and a
+      parsers can be easily replaced by tools like <a target="_blank" href="https://github.com/BurntSushi/ripgrep">ripgrep</a> and a
       tiny
       bit of syntax and regex knowledge. Yet skids don’t wish to put in
       the effort to learn this, so they use these malware-ridden tools
@@ -287,7 +287,7 @@ echo “All done”</code></pre>
     <p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*p10suRlxJ4Aj9XCXMv-nmg.png"
         alt="captionless image" /></p>
     <p>As we can see from the .dll file, this was written in Python 3.8
-      so we have no way of decompiling this ourselves, back to <a href="https://pylingual.io">PyLingual</a> we go!</p>
+      so we have no way of decompiling this ourselves, back to <a target="_blank" href="https://pylingual.io">PyLingual</a> we go!</p>
     <p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OgSY8YS8kBR7hyOGA5rLHA.png"
         alt="It never fails me istg" /></p>
     <p>Yet again, judging by the function names, this looks like more
@@ -346,7 +346,7 @@ echo “All done”</code></pre>
       for the purpose of anonymity). Anyhow, the rest of the strings don’t
       reveal anything interesting at all. So the next step would be to run
       this malware in a sandboxed environment to find out exactly what it
-      does. Off to <a href="https://app.any.run">any.run</a> we go!</p>
+      does. Off to <a target="_blank" href="https://app.any.run">any.run</a> we go!</p>
     <p>And by gosh, there is a lot here to analyze.</p>
     <h2 id="sandboxed-vm-analysis">Sandboxed VM Analysis</h2>
     <p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KZ-0nWq5i3oCRAt2rGiO_A.png"
@@ -374,7 +374,7 @@ echo “All done”</code></pre>
     <p>For the last step before it messes with system
       TRUSTEDINSTALLER-level modules, it tries to see which languages are
       built into the system. This is actually not as uncommon as you might
-      believe. As <a href="https://krebsonsecurity.com/2021/05/try-this-one-weird-trick-russian-hackers-hate/">security
+      believe. As <a target="_blank" href="https://krebsonsecurity.com/2021/05/try-this-one-weird-trick-russian-hackers-hate/">security
         researcher Brian Krebs covered in 2021</a>, Russian cybercrime laws
       work very weirdly. There is a bit of an unspoken, golden rule in the
       Russian cybercrime world which roughly translates to <a
@@ -513,7 +513,7 @@ echo “All done”</code></pre>
       the hell is ZeroX64/Diamotrix? Did ZeroX64 make Praser.exe and
       Diamotrix made the clipper? Are they the same person?</p>
     <h2 id="contacting-the-developer">Contacting The Developer</h2>
-    <p>So, this led me to an account on Telegram under the handle <a href="https://t.me/Diamotrix">@Diamotrix</a>, and
+    <p>So, this led me to an account on Telegram under the handle <a target="_blank" href="https://t.me/Diamotrix">@Diamotrix</a>, and
       guess what, they
       also go by the name ZeroX64!</p>
     <p><img src="https://miro.medium.com/v2/resize:fit:866/format:webp/1*oLJ4j8nOWbHAFin4TDAaHQ.png"
@@ -536,7 +536,7 @@ echo “All done”</code></pre>
       checking the certificate transparency logs for the IP to see which
       other files are hosted there, maybe I could find the
       xstealer.bin.</p>
-    <p>So with that, I found the IP in <a href="https://urlhaus.abuse.ch">URLhaus</a> and it listed a bunch of
+    <p>So with that, I found the IP in <a target="_blank" href="https://urlhaus.abuse.ch">URLhaus</a> and it listed a bunch of
       other files hosted on the server:</p>
     <p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*U9n72FkwkDhcfJO5_EF7Jg.png"
         alt="captionless image" /></p>
@@ -549,7 +549,7 @@ echo “All done”</code></pre>
     <p><img src="https://miro.medium.com/v2/resize:fit:868/format:webp/1*VNQyZ_2eTUROHVaX7AbTuw.png"
         alt="captionless image" /></p>
     <p>So apparently, this malware utilizes a well-known banking trojan
-      called <a href="https://malpedia.caad.fkie.fraunhofer.de/details/win.tinynuke">TinyNuke</a>.
+      called <a target="_blank" href="https://malpedia.caad.fkie.fraunhofer.de/details/win.tinynuke">TinyNuke</a>.
       TinyNuke is a common banking trojan which was first detected in 2017
       but laid dormant for a significant amount of time. Then in 2019, it
       was revealed that the creator of TinyNuke, a French citizen who was
@@ -560,7 +560,7 @@ echo “All done”</code></pre>
     <p>Then in 2021, TinyNuke resurfaced in the malware world as it was
       documented that it began to target French companies. The impact that
       this malware had on these companies is unknown, but regardless, the
-      source code for TinyNuke was eventually leaked onto <a href="https://github.com/rossja/TinyNuke">GitHub</a>, and
+      source code for TinyNuke was eventually leaked onto <a target="_blank" href="https://github.com/rossja/TinyNuke">GitHub</a>, and
       I’m
       guessing this is where ZeroX64/Diamotrix got it from and decided to
       incorporate into his malware.</p>
