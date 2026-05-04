@@ -295,6 +295,10 @@ li {
     text-align: center;
   }
 
+  nav.socials {
+    justify-content: center;
+  }
+
   section {
     position: static;
   }
